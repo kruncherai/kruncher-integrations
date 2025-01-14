@@ -15,6 +15,18 @@ const integrationApi = axios.create({
   },
 });
 
+const validURL = (str) => {
+  const pattern = new RegExp(
+    "^(https?:\\/\\/)?" + // protocol
+      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+      "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+      "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+      "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+      "(\\#[-a-z\\d_]*)?$",
+    "i"
+  ); // fragment locator
+  return !!pattern.test(str);
+};
 
 // Health Check Endpoint
 app.get("/", (req, res) => {
@@ -46,9 +58,10 @@ app.post("/project", async (req, res) => {
 app.get("/analysis/:id", async (req, res) => {
   const analysisId = req.params.id;
   try {
-    const response = await integrationApi.get(`/analysis/detail?analysisId=${analysisId}`);
+    const response = await integrationApi.get(
+      `/analysis/detail?analysisId=${analysisId}`
+    );
     res.status(200).json(response.data);
-
   } catch (error) {
     console.error(`Error fetching analysis ${analysisId}:`, error.message);
     res.status(500).json({ error: "Failed to fetch analysis." });
