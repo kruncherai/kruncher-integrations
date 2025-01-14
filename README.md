@@ -1,10 +1,5 @@
 ### Kruncher Integrations
-Integration guides for Affinity x Kruncher
-
-
-### Directories and guides. 
-
-Please find your directory. Express integration. 
+Setup integration with Kruncher. Please find the example in express-integration for a running example.
 
 ### Setup ENVIRONMENT VARIABLES
 
@@ -14,6 +9,13 @@ Please find your directory. Express integration.
 3. Select Trigger on New Analysis Receive. 
 4. API_BASE_URL = https://api.kruncher.ai/api/integration'
 
+Example .env
+```js
+PORT=8000
+INTEGRATION_API_BASE_URL=https://api.kruncher.ai/api/integration
+INTEGRATION_API_KEY=kruncher.Fw~Z7ba9MkXS-xXirrQsq5uPen5.UB~S7IhfV$9kgAYsIwMcv8hXBC9hB_Ke0xJ~w/VPqGNGZA4od4TVaY._.kmqoMZ
+```
+###### Please note that the API key is not active anymore and it just for example purpose. 
 
 
 ### Create new API response. 
