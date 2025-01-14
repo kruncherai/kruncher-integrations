@@ -2,7 +2,6 @@
 require("dotenv").config();
 const express = require("express");
 const axios = require("axios");
-const sqlite3 = require("sqlite3");
 const app = express();
 
 // Middleware to parse JSON bodies
