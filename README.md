@@ -1,6 +1,9 @@
 ### Kruncher Integrations
 Setup integration with Kruncher. Please find the example in express-integration for a running example.
 
+Full API documentation
+[API Documentation](/api-documentation.md)
+
 ### Setup ENVIRONMENT VARIABLES
 
 1. Get your API key from: [Kruncher API Settings](https://kruncher.ai/app/settings/integrations)
@@ -135,4 +138,4 @@ app.post("/webhook", async (req, res) => {
 7. Response example: can be found [Analysis Example Response](/examples/analysis-response.json)
 
 
-Happy integration! If there are any questions please don't feel hesitated to contact me on: francesco@kruncher.ai
+Happy integration! If there are any questions please don't hesitated to contact us at: francesco@kruncher.ai
